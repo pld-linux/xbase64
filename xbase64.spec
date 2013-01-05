@@ -65,6 +65,7 @@ Statyczna biblioteka XBase64.
 %package tools
 Summary:	XBase64 utilities for xbase files
 Summary(pl.UTF-8):	XBase64 - narzędzia do plików xbase
+License:	GPL v2+
 Group:		Applications/File
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	xbase-tools
