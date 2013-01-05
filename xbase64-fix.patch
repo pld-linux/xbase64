@@ -36,3 +36,18 @@
  
  void xbNodeLink::AddNode(xbNodeLink* node)
  {
+--- xbase64-3.1.2/bin/dumprecs.cpp.orig	2004-03-25 16:58:24.000000000 +0100
++++ xbase64-3.1.2/bin/dumprecs.cpp	2013-01-05 19:31:58.354017486 +0100
+@@ -84,9 +84,9 @@
+     }
+ 
+     std::cout << "Processing file sequentially from beginning..." << std::endl;
+-    int i = 0;
+-    while(i<MyFile.NoOfRecords()){
+-      rc = MyFile.DumpRecord(++i);
++    int j = 0;
++    while(j<MyFile.NoOfRecords()){
++      rc = MyFile.DumpRecord(++j);
+       if( rc != XB_NO_ERROR )
+         x.DisplayError( rc );
+     }
