@@ -1,0 +1,20 @@
+--- xbase64-3.1.2/configure.in.orig	2006-07-17 18:58:33.000000000 +0200
++++ xbase64-3.1.2/configure.in	2013-01-05 16:50:12.742950590 +0100
+@@ -49,7 +49,7 @@
+ AM_INIT_AUTOMAKE(xbase64, 3.1.2)
+ 
+ # create this header file
+-AM_CONFIG_HEADER(xbase64/xbconfig.h:xbase64/xbconfig.in)
++AC_CONFIG_HEADERS(xbase64/xbconfig.h:xbase64/xbconfig.in)
+ 
+ #create a library
+ AM_PROG_LIBTOOL
+@@ -74,7 +74,7 @@
+ 
+ # get G++ version
+ if test "$GXX" = "yes"; then
+-  GXXVER=`${CXX} -v 2>&1 | grep version | cut -d " " -f 3 -`
++  GXXVER=`${CXX} -v 2>&1 | grep ' version ' | cut -d " " -f 3 -`
+   GXXVER="gcc${GXXVER}"
+ else
+   GXXVER=""

@@ -1,0 +1,38 @@
+--- xbase64-3.1.2/libtest/Makefile.am.orig	2004-03-27 15:33:18.000000000 +0100
++++ xbase64-3.1.2/libtest/Makefile.am	2013-01-05 16:42:13.672960575 +0100
+@@ -1,6 +1,6 @@
+ 
+ INCLUDES= -I$(topdir)
+-LDADD	= -L$(topdir)/xbase64 -lxbase64
++LDADD	= $(topdir)/xbase64/libxbase64.la
+ 
+ INSTALL_PROGRAM = @INSTALL@
+ 
+--- xbase64-3.1.2/xbase64/xbase64.cpp.orig	2006-07-17 18:54:42.000000000 +0200
++++ xbase64-3.1.2/xbase64/xbase64.cpp	2013-01-05 17:04:06.946266537 +0100
+@@ -50,6 +50,7 @@
+ 
+ #include <xbase64/xbase64.h>
+ #include <ctype.h>
++#include <errno.h>
+ #include <string.h>
+ 
+ //#include <xbase64/xbexcept.h>
+--- xbase64-3.1.2/xbase64/xblock.cpp.orig	2006-07-17 18:54:42.000000000 +0200
++++ xbase64-3.1.2/xbase64/xblock.cpp	2013-01-05 17:11:39.129590447 +0100
+@@ -62,6 +62,7 @@
+ #include <dos.h>
+ #endif
+ 
++#include <errno.h>
+ //#include <stdio.h>
+ //#include <stdlib.h>
+ 
+--- xbase64-3.1.2/xbase64/xbnode.cpp.orig	2013-01-05 17:20:52.286245581 +0100
++++ xbase64-3.1.2/xbase64/xbnode.cpp	2013-01-05 17:22:35.792910092 +0100
+@@ -1,4 +1,4 @@
+-#include "xbNode.h"
++#include "xbnode.h"
+ 
+ void xbNodeLink::AddNode(xbNodeLink* node)
+ {
