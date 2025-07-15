@@ -83,8 +83,8 @@ XBase64 - narzędzia do plików xbase.
 # not undos - there are some CRs in the middle if lines
 %{__sed} -i -e 's,\r,,' -e 's,__GNU LesserG__,__GNU_LesserG__,' xbase64/*.[ch]*
 
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
 %{__libtoolize}
